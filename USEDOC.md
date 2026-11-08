@@ -4,7 +4,7 @@ Muse Auto 是一个运行在 Windows 上的 **VMOS Edge + Muse（Meta AI）自�
 它通过 VMOS 主机的 HTTP API 控制云手机，完成 Muse 账号注册、换绑邮箱、兑换邀请码、
 保存账号表、清理应用数据等步骤，并提供 tkinter 图形界面和 CLI。
 
-当前版本：`0.1.0`  
+当前版本：`1.0.3`  
 默认 App：`com.facebook.aura`（Muse）  
 默认 VMOS API 端口：`18182`
 
@@ -476,17 +476,43 @@ python -m PyInstaller --noconfirm --clean --onefile --console `
 
 ### 9.4 组装干净便携目录
 
-不要手工复制开发目录里的邮箱池、XLS、日志，直接运行：
+最简单：先改 `muse_auto/__init__.py` 和 `pyproject.toml` 的版本号，然后运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File packaging/build.ps1
+```
+
+这个脚本会自动：
+
+```text
+PyInstaller 构建 GUI
+→ PyInstaller 构建 CLI
+→ 生成版本化便携目录
+→ 生成版本化 zip
+```
+
+也可以只组装、不重建 exe：
 
 ```powershell
 python packaging/build_portable.py
 ```
 
-脚本会生成 `dist/MuseAuto-Portable/`，并**新建空模板**：
+脚本会按 `muse_auto/__init__.py` 的版本号生成：
+
+```text
+dist/MuseAuto-Portable-v1.0.3/
+dist/MuseAuto-v1.0.3-Windows-x64.zip
+```
+
+每次发版前先把 `__version__` 和 `pyproject.toml` 的版本号加一，再运行脚本；
+这样历史包不会互相覆盖。
+
+包内会**新建空模板**：
 
 ```text
 MuseAuto.exe
 MuseAutoCLI.exe
+VERSION.txt                   # 版本号和打包时间
 config/settings.json          # API Key 为空，hosts 为空
 outlookMail.txt               # 只有注释，没有真实邮箱
 changeEmailInfo/changeEmail.txt

@@ -14,11 +14,17 @@ blank five-column ``muse账号.xls``.  It never copies the developer's real
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import shutil
+import sys
 from pathlib import Path
 
 import xlwt
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from muse_auto import __version__  # noqa: E402
 
 HEADERS = ("账号", "创建时间", "账号-api", "邀请码", "本号邀请码")
 
@@ -49,7 +55,7 @@ def _template_settings(root: Path) -> dict:
     return raw
 
 
-def build(root: Path, dest: Path) -> None:
+def build(root: Path, dest: Path, version: str) -> None:
     gui = root / "dist" / "MuseAuto.exe"
     cli = root / "dist" / "MuseAutoCLI.exe"
     if not gui.exists() or not cli.exists():
@@ -61,6 +67,11 @@ def build(root: Path, dest: Path) -> None:
 
     for source in (gui, cli, root / "README.md", root / "USEDOC.md"):
         shutil.copy2(source, dest / source.name)
+
+    (dest / "VERSION.txt").write_text(
+        f"Muse Auto {version}\n打包时间：{dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n",
+        encoding="utf-8",
+    )
 
     (dest / "config").mkdir()
     (dest / "config" / "settings.json").write_text(
@@ -104,18 +115,29 @@ def build(root: Path, dest: Path) -> None:
         (dest / name).mkdir()
 
     print(f"已生成干净便携包：{dest}")
+    print(f"版本：{version}")
     print("未复制：outlookMail.txt / changeEmailInfo / registerEmail.txt.txt / inviteCode.txt / muse账号.xls / logs / artifacts / data")
     print("下一步：填写 config/settings.json 和三个邮箱/邀请码文件后再运行")
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--root", default=Path(__file__).resolve().parent.parent)
+    parser.add_argument("--root", default=ROOT)
+    parser.add_argument("--version", default=__version__, help=f"默认 {__version__}")
     parser.add_argument("--dest", default=None)
+    parser.add_argument("--no-zip", action="store_true", help="只生成文件夹，不生成 zip")
     args = parser.parse_args()
     root = Path(args.root).resolve()
-    dest = Path(args.dest).resolve() if args.dest else root / "dist" / "MuseAuto-Portable"
-    build(root, dest)
+    version = str(args.version).strip()
+    dest = Path(args.dest).resolve() if args.dest else root / "dist" / f"MuseAuto-Portable-v{version}"
+    build(root, dest, version)
+    if not args.no_zip:
+        zip_base = root / "dist" / f"MuseAuto-v{version}-Windows-x64"
+        zip_path = Path(str(zip_base) + ".zip")
+        if zip_path.exists():
+            zip_path.unlink()
+        made = shutil.make_archive(str(zip_base), "zip", root_dir=dest)
+        print(f"已生成版本压缩包：{made}")
     return 0
 
 
