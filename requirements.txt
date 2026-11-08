@@ -1,0 +1,3 @@
+# XLS account ledger (step 3)
+xlrd>=2.0.1
+xlwt>=1.3.0

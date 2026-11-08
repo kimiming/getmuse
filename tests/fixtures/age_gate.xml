@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<hierarchy rotation="0">
+  <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[0,0][1080,2400]">
+    <node index="0" text="Verify your age" resource-id="com.facebook.aura:id/heading" class="android.widget.TextView" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[60,380][1020,480]" />
+    <node index="1" text="Add a card or continue with Instagram or Facebook" resource-id="com.facebook.aura:id/body" class="android.widget.TextView" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[60,500][1020,640]" />
+    <node index="2" text="Continue with Instagram" resource-id="com.facebook.aura:id/ig" class="android.widget.Button" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[80,2100][1000,2200]" />
+    <node index="3" text="Continue with Facebook" resource-id="com.facebook.aura:id/fb" class="android.widget.Button" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[80,2230][1000,2330]" />
+  </node>
+</hierarchy>

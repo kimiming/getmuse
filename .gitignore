@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+.env.*
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# ---------------------------------------------------------------------------
+# 账号 / 邮箱 / 邀请码 / 密钥：绝对不能上传
+# ---------------------------------------------------------------------------
+
+# 账号结果表：muse账号.xls、muse账号 1106.xls、副本、时间戳备用表、pending 日志
+muse账号*
+*.xls
+*.xlsx
+*.pending.jsonl
+
+# Outlook 邮箱池：outlookMail.txt、outlookMail.before_test.txt 等
+outlookMail*
+
+# 自选注册邮箱池（邮箱----API）
+registerEmail.txt.txt
+registerEmail*.txt*
+
+# 步骤2 换绑邮箱池和 yich8 取码 API（含邮箱地址、API key）
+changeEmailInfo/
+
+# 邀请码池及使用次数
+inviteCode.txt
+inviteCode*.txt
+
+# 邮箱 API 的 Key / 备注
+getEmailInfo.txt
+*mail*secret*
+*mail*key*
+
+# 主配置和 GUI 状态里含邮箱 API Key
+config/settings.json
+data/
+
+# 日志、失败现场、截图、dump 可能含邮箱/验证码/账号
+logs/
+artifacts/
+*.log
+*.jsonl
+
+# ---------------------------------------------------------------------------
+# 本地构建产物
+# ---------------------------------------------------------------------------
+build/
+dist/
+*.spec
+*.exe
+*.zip
+*.msi
+*.7z
+*.tar.gz
+
+# 本地工具 / 编辑器
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak
+*.orig
+*.rej
+*.tmp
+*.temp

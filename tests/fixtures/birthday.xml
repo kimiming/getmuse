@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<hierarchy rotation="0">
+  <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[0,0][1080,2400]">
+    <node index="0" text="What's your birthday?" resource-id="com.facebook.aura:id/heading" class="android.widget.TextView" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[60,380][1020,480]" />
+    <node index="1" text="MM" resource-id="com.facebook.aura:id/month" class="android.widget.EditText" package="com.facebook.aura" content-desc="Month" clickable="true" enabled="true" focused="false" bounds="[80,560][300,700]" />
+    <node index="2" text="DD" resource-id="com.facebook.aura:id/day" class="android.widget.EditText" package="com.facebook.aura" content-desc="Day" clickable="true" enabled="true" focused="false" bounds="[330,560][550,700]" />
+    <node index="3" text="YYYY" resource-id="com.facebook.aura:id/year" class="android.widget.EditText" package="com.facebook.aura" content-desc="Year" clickable="true" enabled="true" focused="false" bounds="[580,560][1000,700]" />
+    <node index="4" text="Continue" resource-id="com.facebook.aura:id/continue" class="android.widget.Button" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[80,2100][1000,2200]" />
+  </node>
+</hierarchy>

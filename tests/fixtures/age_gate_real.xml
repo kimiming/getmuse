@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<hierarchy rotation="0">
+  <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[0,0][1008,2410]">
+    <node index="0" text="Confirm your age" resource-id="" class="android.widget.TextView" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[72,420][936,520]" />
+    <node index="1" text="Use credit card info to help us confirm your age. Your card will be charged $1.00, which will be refunded in 5-7 business days." resource-id="" class="android.widget.TextView" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[72,560][936,740]" />
+    <node index="2" text="Card number" resource-id="card_number" class="android.widget.EditText" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[48,800][960,900]" />
+    <node index="3" text="MM/YY" resource-id="expiry" class="android.widget.EditText" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[48,940][470,1040]" />
+    <node index="4" text="CVV" resource-id="cvv" class="android.widget.EditText" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[500,940][960,1040]" />
+    <node index="5" text="You can also continue with your Instagram or Facebook account to confirm your age." resource-id="" class="android.widget.TextView" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[72,1500][936,1600]" />
+    <node index="6" text="Confirm" resource-id="primary_button" class="android.view.View" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[48,1700][960,1840]" />
+  </node>
+</hierarchy>

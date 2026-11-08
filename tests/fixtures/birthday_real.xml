@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<hierarchy rotation="0">
+  <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[0,0][1008,2410]">
+    <node index="0" text="Finish creating your account" resource-id="" class="android.widget.TextView" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[72,420][936,520]" />
+    <node index="1" text="This information won't be public. Why do I need to provide my birthday?" resource-id="" class="android.widget.TextView" package="com.facebook.aura" content-desc="" clickable="false" enabled="true" focused="false" bounds="[72,560][936,680]" />
+    <node index="2" text="March 17, 2000" resource-id="AuraTextInput" class="android.widget.EditText" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[48,760][960,900]" />
+    <node index="3" text="Confirm" resource-id="primary_button" class="android.view.View" package="com.facebook.aura" content-desc="" clickable="true" enabled="true" focused="false" bounds="[48,1400][960,1540]" />
+  </node>
+</hierarchy>
